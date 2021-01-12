@@ -160,4 +160,38 @@ if(chanses == 0 && userAge != agecorrect){
 
 */
 
+let panier = []; 
 
+let maxPlaces = 8; 
+
+
+while(panier.length < maxPlaces){
+    let ajtunfruit = prompt("Entrez le nom du fruit à ajouter"); 
+    if(ajtunfruit.length > 0){
+        panier.push(ajtunfruit);
+    }else{
+        alert('un nom VALIDE!');
+    }
+}
+
+if(panier.length == maxPlaces){
+    alert('ton panier est plein!!'); 
+    alert(panier); 
+    let confirmation; 
+
+    let supprimerUnFruit = confirm("Désirez-vous supprimer un fruit? "); 
+
+    while(supprimerUnFruit){
+        let fruitAsupp = prompt("Entrez le nom du fruit a supprimer"); 
+        if(panier.includes(fruitAsupp)){
+            panier.splice(panier.indexOf[fruitAsupp],1);
+            supprimerUnFruit = confirm("Désirez-vous supprimer un fruit? "); 
+        }else{
+            alert(`Fruit ${fruitAsupp} non trouver dans le panier`);
+        }
+    }
+    alert(panier);
+}
+
+//on ne verifie pas si le panier est vide :( 
+console.log(panier); 
